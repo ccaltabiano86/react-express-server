@@ -79,16 +79,22 @@ function Navigation(props) {
         {
             link: '/about', 
             name: 'About',
-            submenu: []
+            submenu: [
+                {
+                    link: '/about/contact', 
+                    name: 'Contact',
+                    submenu: []
+                },
+                {
+                    link: '/about/documentation', 
+                    name: 'Documentation',
+                    submenu: []
+                }
+            ]
         },
         {
-            link: '/contact', 
-            name: 'Contact',
-            submenu: []
-        },
-        {
-            link: 'https://codepen.io/', 
-            name: 'External Link Test',
+            link: 'https://codepen.io/ccaltabiano86', 
+            name: 'External Codepen',
             submenu: []
         },
         {

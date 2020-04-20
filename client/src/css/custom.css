@@ -1,86 +1,115 @@
 /* custom.css */
 .App {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 .App-logo {
-    height: 60px;
-    pointer-events: none;
-    margin: -20px 0 -20px -20px;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  } 
+  height: 60px;
+  pointer-events: none;
+  margin: -20px 0 -20px -20px;
+}
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
+} 
 
-  .full-page {
-    min-height: calc(100vmin - 112px);
-    padding-top: 40px;
-    padding-bottom: 20px;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  .nav-item {
-    text-align: center;
-    position: relative;
-  }
-  .nav-item:hover > .dropdown-menu {
-    display: block;
-  }
-  .show .dropdown-menu {
-    display: block;
-    text-align: center;
-  }
+.full-page {
+  min-height: calc(100vmin - 112px);
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 
-  a.list-group-item:hover{
-    text-decoration: none;
-    background-color: #99dfea;
-  }
+.nav-item {
+  text-align: center;
+  position: relative;
+}
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+.show .dropdown-menu {
+  display: block;
+  text-align: center;
+}
+
+a.list-group-item:hover{
+  text-decoration: none;
+  background-color: #99dfea;
+}
 
 
-  .sQgrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-  }
-  .bg-dark .sQgrid > div {
-    background: #00000033;
-  }
-  .bg-light .sQgrid > div {
-    background: #000000b3;
-  }
-  .sQgrid > div {
-    padding: 1rem;
-    position: relative;
-  }
-  .sQgrid > div::before {
-    content: "";
-    padding-bottom: 100%;
-    display: block;
-  }
-  .sQgrid > div {
-    /* ... */
-    display: grid;
-  }
-  .sQgrid > div::before,
-  .sQgrid > div > img {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-  .sQgrid > div > img {
-    position: absolute;
-    max-height: 90%;
-    max-width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.sQgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+.bg-dark .sQgrid > div {
+  background: #00000033;
+}
+.bg-light .sQgrid > div {
+  background: #000000b3;
+}
+.sQgrid > div {
+  padding: 1rem;
+  position: relative;
+}
+.sQgrid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+.sQgrid > div {
+  /* ... */
+  display: grid;
+}
+.sQgrid > div::before,
+.sQgrid > div > img {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.sQgrid > div > img {
+  position: absolute;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.codeFormat {
+  color: rgb(212, 212, 212); 
+  background-color: rgb(30, 30, 30); 
+  font-family: Menlo, Monaco, 'Courier New', monospace; 
+  font-size: 12px; 
+  line-height: 18px;
+  padding: 20px;
+  border-radius: 3px;
+}
+.bg-light .codeFormat {
+  background-color: rgb(76, 76, 76); 
+}
+.codeFormat .tab1 {
+  margin-left: 2em;
+}
+.codeFormat .tab2 {
+  margin-left: 4em;
+}
+.codeFormat .tab3 {
+  margin-left: 6em;
+}
+.codeFormat .tab4 {
+  margin-left: 8em;
+}
+.codeFormat .tab5 {
+  margin-left: 10em;
+}

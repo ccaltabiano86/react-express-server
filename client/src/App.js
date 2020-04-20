@@ -19,7 +19,10 @@ import GridProject from './pages/projects/GridProject';
 import ReactProject from './pages/projects/ReactProject';
 //projects END
 import About from './pages/About';
-import Contact from './pages/Contact';
+//about START
+import Documentation from './pages/about/Documentation';
+import Contact from './pages/about/Contact';
+//about END
 
 //error page
 import Error404 from './pages/Error404';
@@ -34,15 +37,16 @@ class App extends Component {
         <div className='container full-page'>
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/projects' exact component={Projects} />
-            <Route path='/projects/react-project' component={ReactProject}/>
-            <Route path='/projects/grid-project' component={GridProject}/>
-            <Route path='/projects/api-project' exact component={ApiProject}/>
-            <Route path='/projects/list' component={List}/>
-            <Route path='/projects/blogs-project' component={Blogs}/>
-            <Route path='/projects/wordpress-project' component={WordPressApi}/>
-            <Route path='/about' component={About}/>
-            <Route path='/contact' component={Contact}/>
+            <Route exact path='/projects' component={Projects} />
+            <Route exact path='/projects/react-project' component={ReactProject}/>
+            <Route exact path='/projects/grid-project' component={GridProject}/>
+            <Route exact path='/projects/api-project' component={ApiProject}/>
+            <Route exact path='/projects/list' component={List}/>
+            <Route exact path='/projects/blogs-project' component={Blogs}/>
+            <Route exact path='/projects/wordpress-project' component={WordPressApi}/>
+            <Route exact path='/about' component={About}/>
+            <Route exact path='/about/contact' component={Contact}/>
+            <Route exact path='/about/documentation' component={Documentation}/>
             <Route path='*' component={Error404}/>
           </Switch>
         </div>

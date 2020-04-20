@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../components/hooks/useFetch';
 
 function ReactProject() {
 
