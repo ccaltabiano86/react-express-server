@@ -74,6 +74,10 @@ function Navigation(props) {
             {
                 link: '/projects/wordpress-project',
                 name: 'WordPress API Project'
+            },
+            {
+                link: '/projects/json-api-project',
+                name: 'JSON API Project'
             }]
         },
         {

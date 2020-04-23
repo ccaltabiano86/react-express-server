@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 //projects START
+import JsonApiProject from './pages/projects/JsonApiProject';
 import WordPressApi from './pages/projects/WordPressApi';
 import Blogs from './pages/projects/Blogs';
 import List from './pages/projects/List';
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path='/projects/list' component={List}/>
             <Route exact path='/projects/blogs-project' component={Blogs}/>
             <Route exact path='/projects/wordpress-project' component={WordPressApi}/>
+            <Route exact path='/projects/json-api-project' component={JsonApiProject}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/about/contact' component={Contact}/>
             <Route exact path='/about/documentation' component={Documentation}/>
