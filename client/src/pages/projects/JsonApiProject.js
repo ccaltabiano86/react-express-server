@@ -11,16 +11,17 @@ function JsonApiProject() {
 
     const fetchItems = async () => {
         let headers = new Headers();
-        headers.append('Access-Control-Allow-Origin', 'http://react-js.local:3000');
+        headers.append('Access-Control-Allow-Origin', '//react-js.local');
         headers.append('Access-Control-Allow-Credentials', 'true');
         //headers.append('Access-Control-Allow-Headers', 'Authorization, Content-Type');
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        const url = "http://react-js.local/imger/results.json"; 
+        const url = "//react-js.local/imger/results.json"; 
+        //const url = "http://react-js.local/imger/json.php";
         const data = await fetch(url, {
-            origin: 'http://react-js.local',
+            origin: '//react-js.local',
             mode: 'cors',
             credentials: 'same-origin',
-            method: 'POST',
+            method: 'GET',
             headers: headers
           })
 
@@ -74,6 +75,7 @@ function JsonApiProject() {
             <div className='col-md-12'>
                 <h1>Here is my API Project</h1>
                 <p className='text-justify'>The content below is fetched from <code>'http://react-js.local/imger/results.json'</code>.</p>
+                <h3>Unfortuanatly this project is suffering from a CORS issue and will be put on hold until I can figure this out :(</h3>
                 <ul className="list-group">
                     {items
                     //.filter((e) => e.id === pageId)
