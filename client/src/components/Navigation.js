@@ -77,7 +77,8 @@ function Navigation(props) {
             },
             {
                 link: '/projects/json-api-project',
-                name: 'JSON API Project'
+                name: 'JSON API Project',
+                icon: 'fa fa-bug text-danger'
             }]
         },
         {
@@ -86,13 +87,11 @@ function Navigation(props) {
             submenu: [
                 {
                     link: '/about/contact', 
-                    name: 'Contact',
-                    submenu: []
+                    name: 'Contact'
                 },
                 {
                     link: '/about/documentation', 
-                    name: 'Documentation',
-                    submenu: []
+                    name: 'Documentation'
                 }
             ]
         },
@@ -117,7 +116,11 @@ function Navigation(props) {
                     {menuLink.submenu.map((submenuItem, i) => { 
                         return(
                             <li key={i} className="dropdown-item">
-                                <a className="nav-link" href={submenuItem.link}>{submenuItem.name}</a>
+                                <a className="nav-link" href={submenuItem.link}>
+                                    {submenuItem.name}
+                                    {' '}
+                                    {((submenuItem.icon) ? <i className={submenuItem.icon} aria-hidden="true"></i> : '')}
+                                    </a>
                                 </li>
                         )
                     })
