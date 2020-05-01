@@ -2,73 +2,25 @@ import React, { useState, useEffect } from 'react';
 
 function JsonApiProject() {
 
+    //const url = "//react-js.local/imger/results.php"; 
+
+    const [items, setPosts] = useState([]);
     useEffect(() => {
-        fetchItems();
-    },[]);
-
-    const [items, setItems] = useState([]);
-
-
-    const fetchItems = async () => {
-        let headers = new Headers();
-        headers.append('Access-Control-Allow-Origin', '//react-js.local');
-        headers.append('Access-Control-Allow-Credentials', 'true');
-        //headers.append('Access-Control-Allow-Headers', 'Authorization, Content-Type');
-        headers.append('Content-Type', 'application/json; charset=utf-8');
-        const url = "//react-js.local/imger/results.json"; 
-        //const url = "http://react-js.local/imger/json.php";
-        const data = await fetch(url, {
-            origin: '//react-js.local',
-            mode: 'cors',
-            credentials: 'same-origin',
-            method: 'GET',
-            headers: headers
-          })
-
-
-
-            
-
-        const items = await data.json();
-
-        //console.log(data);
-        console.log(items);
-        setItems(items);
-    }
-
-
-/*
-    const fetchItems = async () => {
-        // Example POST method implementation:
-        async function postData(url = 'http://react-js.local/imger/results.json', data = {}) {
-            // Default options are marked with *
-            const response = await fetch(url, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(data) // body data type must match "Content-Type" header
-            });
-            //return response.json(); // parses JSON response into native JavaScript objects
-            const items =  response.json(); 
-            console.log(items);
-            setItems(items);
+        async function loadPosts() {
+            const response = await fetch('http://react-js.local:80/imger/results.json');
+            if(!response.ok) {
+                // oups! something went wrong
+                return;
+            }
+    
+            const posts = await response.json();
+            setPosts(posts);
         }
+    
+        loadPosts();
+   }, [])
 
-        postData('http://react-js.local/imger/results.json', { answer: 42 })
-        .then((data) => {
-            console.log(data); // JSON data parsed by `response.json()` call
-        });
-    }
-*/
 
-    //const pageId = 1;
 
     return(
         <div className='row'>
