@@ -113,3 +113,9 @@ a.list-group-item:hover{
 .codeFormat .tab5 {
   margin-left: 10em;
 }
+
+
+.fa-spin-slow {
+  -webkit-animation: fa-spin 5s infinite linear;
+  animation: fa-spin 5s infinite linear;
+}
