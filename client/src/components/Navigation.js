@@ -53,27 +53,33 @@ function Navigation(props) {
             name: 'Projects',
             submenu: [{
                 link: '/projects/react-project',
-                name: 'React JS Project'
+                name: 'React JS Project',
+                icon: 'fa fa-rocket'
             },
             {
                 link: '/projects/grid-project',
-                name: 'Grid Project'
+                name: 'Grid Project',
+                icon: 'fa fa-picture-o'
             },
             {
                 link: '/projects/api-project',
-                name: 'React API Project'
+                name: 'React API Project',
+                icon: 'fa fa-list-alt'
             },
             {
                 link: '/projects/list',
-                name: 'Express API Project'
+                name: 'Express API Project',
+                icon: 'fa fa-cog'
             },
             {
                 link: '/projects/blogs-project',
-                name: 'MySQL Blogs Project'
+                name: 'MySQL Blogs Project',
+                icon: 'fa fa-database'
             },
             {
                 link: '/projects/wordpress-project',
-                name: 'WordPress API Project'
+                name: 'WordPress API Project',
+                icon: 'fa fa-cubes'
             },
             {
                 link: '/projects/json-api-project',
@@ -97,29 +103,35 @@ function Navigation(props) {
         },
         {
             link: 'https://codepen.io/ccaltabiano86', 
-            name: 'External Codepen',
+            name: 'My Codepen',
+            icon: 'fa fa-codepen',
             submenu: []
         },
         {
             link: '/blahblah', 
             name: 'Error 404',
+            icon: 'fa fa-warning',
             submenu: []
         }
     ];
 
 
-    const listItems = menuLinks.map((menuLink, idx) => {
+    const listItems = menuLinks.map((menuItem, idx) => {
         return(
             <li className="nav-item" key={idx}>
-                <a className="nav-link" href={menuLink.link}>{menuLink.name}</a>
+                <a className="nav-link" href={menuItem.link}>
+                    {((menuItem.icon) ? <i className={menuItem.icon} aria-hidden="true"></i> : '')}
+                    {' '}
+                    {menuItem.name}
+                </a>
                 <ul className="dropdown-menu">
-                    {menuLink.submenu.map((submenuItem, i) => { 
+                    {menuItem.submenu.map((submenuItem, i) => { 
                         return(
                             <li key={i} className="dropdown-item">
                                 <a className="nav-link" href={submenuItem.link}>
-                                    {submenuItem.name}
-                                    {' '}
                                     {((submenuItem.icon) ? <i className={submenuItem.icon} aria-hidden="true"></i> : '')}
+                                    {' '}
+                                    {submenuItem.name}
                                     </a>
                                 </li>
                         )
