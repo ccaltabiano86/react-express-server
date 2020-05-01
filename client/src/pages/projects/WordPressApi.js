@@ -15,26 +15,26 @@ export default function WordPressApi() {
         }
     
         loadPosts();
-   }, [])
+    }, [])
 
-   const articleStyle = {
-       marginBottom: '50px' 
-   }
+    const articleStyle = {
+        marginBottom: '50px' 
+    }
 
-  return (
-    <section>
-        <div className='col-md-12'>
-            <h1>WordPress API Project</h1>
-            <p>The data below is fetched from <code>https://obeliskdigital.com.au/client_preview/wordpress/</code> using the WordPress RESTful API.</p>
-            {posts.map((post, index) => (
-                <article key={index} style={articleStyle}>
-                    <h3 dangerouslySetInnerHTML={ {__html:post.title.rendered}}/>
-                    {/*<div dangerouslySetInnerHTML={ {__html:post.content.rendered}}/>*/}
-                    <div dangerouslySetInnerHTML={ {__html:post.excerpt.rendered}}/>
-                    <p>URL: <a href={post.link}>{post.link}</a></p>
-                </article>
-            ))}
-        </div>
-     </section>
- );
+    return (
+        <section>
+            <div className='col-md-12'>
+                <h1>WordPress API Project</h1>
+                <p>The data below is fetched from <code>https://obeliskdigital.com.au/client_preview/wordpress/</code> using the WordPress RESTful API.</p>
+                {posts.map((post, index) => (
+                    <article key={index} style={articleStyle}>
+                        <h3 dangerouslySetInnerHTML={ {__html:post.title.rendered}}/>
+                        {/*<div dangerouslySetInnerHTML={ {__html:post.content.rendered}}/>*/}
+                        <div dangerouslySetInnerHTML={ {__html:post.excerpt.rendered}}/>
+                        <p>URL: <a href={post.link}>{post.link}</a></p>
+                    </article>
+                ))}
+            </div>
+        </section>
+    );
 }
