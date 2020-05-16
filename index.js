@@ -49,8 +49,29 @@ app.get('/api/getBlogs', async (req,res) => {
 app.get('/api/getList', (req,res) => {
     var list = ["item1", "item2", "item3"];
     res.json(list);
-    console.log('Sent list of items');
+    console.log(list + ' Sent list of items');
 });
+
+// get list V2 from external file does not work yet!
+const getListArray = require('./modules/getListV2')
+const listKey = Object.keys(getListArray);
+for (x in listKey) {
+    app.get('/api/getList/'+listKey[x], (req,res) => {
+            if (x == 0) {
+                var list = getListArray.list1;
+                res.json(list);
+                console.log(list);
+            } else if (x == 1) {
+                var list = getListArray.list2;
+                res.json(list);
+                console.log(list);
+            } else if (x == 2) {
+                var list = getListArray.list3;
+                res.json(list);
+                console.log(list);
+            }
+    });
+}
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
