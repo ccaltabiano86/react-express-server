@@ -18,6 +18,7 @@ import List from './pages/projects/List';
 import ApiProject from './pages/projects/ApiProject';
 import GridProject from './pages/projects/GridProject';
 import ReactProject from './pages/projects/ReactProject';
+import JavaProject from './pages/projects/javaProject';
 //projects END
 import About from './pages/About';
 //about START
@@ -46,6 +47,7 @@ class App extends Component {
             <Route exact path='/projects/blogs-project' component={Blogs}/>
             <Route exact path='/projects/wordpress-project' component={WordPressApi}/>
             <Route exact path='/projects/json-api-project' component={JsonApiProject}/>
+            <Route exact path='/projects/javascript-project' component={JavaProject}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/about/contact' component={Contact}/>
             <Route exact path='/about/documentation' component={Documentation}/>

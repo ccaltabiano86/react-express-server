@@ -85,6 +85,11 @@ function Navigation(props) {
                 link: '/projects/json-api-project',
                 name: 'JSON API Project',
                 icon: 'fa fa-bug text-danger'
+            },
+            {
+                link: '/projects/javascript-project',
+                name: 'JavaScript Project',
+                icon: 'fa fa-coffee'
             }]
         },
         {
